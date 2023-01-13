@@ -1,0 +1,17 @@
+name: Echoenv
+on:
+  push:
+    branches: [ dev_* ]
+
+jobs:
+  echoenv:
+    runs-on: ubuntu-latest
+    steps:
+    - name: bash echo env step
+      shell: bash
+      env:
+        NAME: 'foo'
+        SECRET_NAME: ${{ secrets.HELLO_ACTION_MOVIE }}
+      run: |
+        echo "Hello NAME: ${NAME}"
+        echo "And SECRET_NAME: ${{ secrets.HELLO_ACTION_MOVIE }}"
