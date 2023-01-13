@@ -6,12 +6,12 @@ on:
 jobs:
   echoenv:
     runs-on: ubuntu-latest
-      steps:
-      - name: bash echo env step
-        shell: bash
-        env:
-          NAME: 'foo'
-  #        NAME: ${{ secrets.HOST_NAME }}
-        run: |
-          echo "Hello g ${NAME}"
-  #        echo " name ${{ secrets.HOST_NAME }}"
+    steps:
+    - name: bash echo env step
+      shell: bash
+      env:
+        NAME: 'foo'
+#        NAME: ${{ secrets.HOST_NAME }}
+      run: |
+        echo "Hello g ${NAME}"
+#        echo " name ${{ secrets.HOST_NAME }}"
