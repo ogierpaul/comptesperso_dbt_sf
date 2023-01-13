@@ -2,7 +2,14 @@ import pandas as pd
 import glob
 import re
 
-def hello_world() -> str:
+expected_columns = ['date_enregistrement', 'Referenzkonto', 'Name Referenzkonto', 'montant',
+       'solde_compte', 'beneficiaire', 'beneficiaire_iban',
+       'transaction_description', 'beneficiaire_iban2', 'categorie_L1',
+       'categorie_L2', 'contrat', 'contrat_recurrence', 'contrat_id',
+       'transfer', 'exclus_revenus', 'transaction_methode',
+       'revenus_depenses']
+
+def _hello_world() -> str:
     """
     This dummy function is used to test the integration with pytest
     :return: dummy text for use in pytest
@@ -61,13 +68,14 @@ def rename_columns(df: pd.DataFrame) -> pd.DataFrame:
     df = df.rename(columns=d)
     return df
 
-def prepare_file(df: pd.DataFrame) -> pd.DataFrame:
+def prepare_excel_for_upload(df: pd.DataFrame) -> pd.DataFrame:
     df = remove_unused_cols(df)
     df = rename_columns(df)
+    df = df[expected_columns]
     return df
 
 if __name__ == '__main__':
     usepath = ''
     df = latest_excel_from_finanzguru(usepath)
-    df = prepare_file(df)
+    df = prepare_excel_for_upload(df)
     pass
