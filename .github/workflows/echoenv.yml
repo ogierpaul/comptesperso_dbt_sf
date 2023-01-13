@@ -1,4 +1,4 @@
-name: Deployment
+name: Echoenv
 on:
   push:
     branches: [ dev_* ]
