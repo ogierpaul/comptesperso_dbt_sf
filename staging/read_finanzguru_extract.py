@@ -1,8 +1,7 @@
 import pandas as pd
 import glob
 import re
-from snowflake.connector.pandas_tools import write_pandas
-import snowflake.connector
+
 
 def latest_excel_from_finanzguru(path:str) -> pd.DataFrame:
     """
@@ -61,5 +60,6 @@ def prepare_file(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 if __name__ == '__main__':
-    filepath = latest_excel_from_finanzguru()
+    usepath = ''
+    filepath = latest_excel_from_finanzguru(usepath)
     print(filepath)
