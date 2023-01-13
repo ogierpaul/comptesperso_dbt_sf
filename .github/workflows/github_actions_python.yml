@@ -1,6 +1,7 @@
 name: Python workflow
 # From https://hackernoon.com/how-to-integrate-github-actions-and-cicd-with-your-next-python-project
 # https://github.com/horosin/python-standard-ci
+# https://www.section.io/engineering-education/setting-up-cicd-for-python-packages-using-github-actions/
 on:
   push:
     branches: [ dev_*]
