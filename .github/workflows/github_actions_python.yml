@@ -23,15 +23,3 @@ jobs:
         python -m pip install --upgrade pip==22.3.1
         python -m pip install --upgrade flake8==6.0.0
         python -m pip install --upgrade pytest==7.2.0
-# if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-#    - name: Lint with flake8
-#      run: |
-#        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-#        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=120 --statistics
-#    - name: Test with pytest
-#      run: |
-#        pytest --cov --cov-report=xml
-#    - name: Check types with mypy
-#      run: mypy src
-
-        .
