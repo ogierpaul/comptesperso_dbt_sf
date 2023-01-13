@@ -9,11 +9,16 @@ on:
 jobs:
   python_ci:
     runs-on: ubuntu-latest
+    env:
+      hello_action_world: ${{secrets.hello_action_world}}
     strategy:
       matrix:
         python-version: [3.8]
     steps:
     - uses: actions/checkout@v2
+    - name: echo env
+      run: |
+        echo $hello_action_world
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v2
       with:
@@ -29,5 +34,7 @@ jobs:
         flake8 ./staging --count --select=E9,F63,F7,F82 --show-source --statistics
         flake8 ./staging --count --exit-zero --max-complexity=10 --max-line-length=120 --statistics
     - name: Pytest
+      env:
+
       run: |
         pytest staging
