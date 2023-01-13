@@ -10,7 +10,7 @@ jobs:
   python_ci:
     runs-on: ubuntu-latest
     env:
-      hello_action_world: ${{secrets.hello_action_world}}
+      hello_action_world: ${{secrets.HELLO_ACTION_WORLD}}
     strategy:
       matrix:
         python-version: [3.8]
