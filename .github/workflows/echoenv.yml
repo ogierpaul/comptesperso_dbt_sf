@@ -13,5 +13,5 @@ jobs:
         NAME: 'foo'
         SECRET_NAME: ${{ secrets.HELLO_ACTION_MOVIE }}
       run: |
-        echo "Hello g ${NAME}"
-        echo " name ${{ secrets.HELLO_ACTION_MOVIE }}"
+        echo "Hello NAME: ${NAME}"
+        echo "And SECRET_NAME: ${{ secrets.HELLO_ACTION_MOVIE }}"
