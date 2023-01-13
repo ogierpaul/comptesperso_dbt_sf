@@ -11,7 +11,7 @@ jobs:
       shell: bash
       env:
         NAME: 'foo'
-        SECRET_NAME: ${{ secrets.HELLO_ACTION_WORLD }}
+        SECRET_NAME: ${{ secrets.HELLO_ACTION_MOVIE }}
       run: |
         echo "Hello g ${NAME}"
-        echo " name ${{ secrets.HELLO_ACTION_WORLD }}"
+        echo " name ${{ secrets.HELLO_ACTION_MOVIE }}"
