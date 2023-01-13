@@ -2,6 +2,13 @@ import pandas as pd
 import glob
 import re
 
+def hello_world() -> str:
+    """
+    This dummy function is used to test the integration with pytest
+    :return: dummy text for use in pytest
+    """
+    return 'Hello World'
+
 
 def latest_excel_from_finanzguru(path:str) -> pd.DataFrame:
     """
@@ -61,5 +68,6 @@ def prepare_file(df: pd.DataFrame) -> pd.DataFrame:
 
 if __name__ == '__main__':
     usepath = ''
-    filepath = latest_excel_from_finanzguru(usepath)
-    print(filepath)
+    df = latest_excel_from_finanzguru(usepath)
+    df = prepare_file(df)
+    pass
