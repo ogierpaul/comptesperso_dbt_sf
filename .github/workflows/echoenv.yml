@@ -1,7 +1,7 @@
 name: Echoenv
 on:
   push:
-    branches: [ dev_* ]
+    branches: [ *_dev ]
 
 jobs:
   echoenv:

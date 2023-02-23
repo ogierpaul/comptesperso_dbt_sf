@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+  - name: staging
+#    database:
+    database: ZACHEE
+    schema: STAGING
+    tables:
+      - name: STG_FINANZGURU
+        columns:
+          - name: transaction_id
+            description: Primary key of the transaction table
+            tests:
+              - unique
+              - not_null

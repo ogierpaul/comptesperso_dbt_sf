@@ -15,7 +15,7 @@ profile: 'comptesperso_dbt_sf'
 model-paths: ["models"]
 analysis-paths: ["analyses"]
 test-paths: ["tests"]
-seed-paths: ["seeds"]
+seed-paths: ["seeds", "hierarchy"]
 macro-paths: ["macros"]
 snapshot-paths: ["snapshots"]
 

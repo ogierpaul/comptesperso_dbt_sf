@@ -4,10 +4,10 @@ name: staging_functions
 # https://www.section.io/engineering-education/setting-up-cicd-for-python-packages-using-github-actions/
 on:
   push:
-    branches: [main, dev_*]
+    branches: [main, dev_*, qa*, paul_*]
 
 jobs:
-  python_ci:
+  staging_functions:
     runs-on: ubuntu-latest
     env:
       HELLO_ACTION_MOVIE: ${{secrets.HELLO_ACTION_MOVIE}}
