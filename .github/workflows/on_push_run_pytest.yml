@@ -9,6 +9,14 @@ on:
 jobs:
   on_push_run_pytest:
     runs-on: ubuntu-latest
+    env:
+      WAREHOUSE: ${{ secrets.SF_DEV_WAREHOUSE }}
+      ACCOUNT: ${{ secrets.SF_DEV_ACCOUNT }}
+      USER: ${{ secrets.SF_DEV_USER }}
+      DATABASE: ${{ secrets.SF_DEV_DATABASE }}
+      SCHEMA: ${{ secrets.SF_DEV_SCHEMA }}
+      ROLE: ${{ secrets.SF_DEV_ROLE }}
+      PASSWORD: ${{ secrets.SF_DEV_PASSWORD }}
     strategy:
       matrix:
         python-version: [3.8]
