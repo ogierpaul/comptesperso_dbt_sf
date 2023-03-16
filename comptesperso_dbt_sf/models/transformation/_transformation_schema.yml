@@ -1,0 +1,59 @@
+version: 2
+
+models:
+  - name: fact_with_receiver_is_account_flag
+    description: "Fact table with received_is_account_flag"
+    columns:
+      - name: transaction_id
+        description: "Transaction ID"
+        tests:
+          - unique
+          - not_null
+      - name: RECEIVER_IS_PERSONAL_ACCOUNT_FLAG
+        description: "Flag indicating if the receiver is a personal account"
+        tests:
+          - not_null
+          - accepted_values:
+              values: [0, 1]
+      - name: beneficiary
+        description: Name of the beneficiary, coalesced with account name when receiver is a personal account
+        tests:
+          - not_null
+  - name: fact_with_spend_from_income_expenses
+    description: "Fact table with spend_from_income_expenses"
+    columns:
+      - name: transaction_id
+        description: "Transaction ID"
+        tests:
+          - unique
+          - not_null
+      - name: spend
+        description: Spend amount. Positive for income, positive for expenses
+  - name: fact_with_corrections
+    description: include the manual corrections from transaction id details and self cancelling transactions
+    columns:
+      - name: transaction_id
+        description: "Transaction ID"
+        tests:
+          - unique
+          - not_null
+      - name: txt_category_lvl3
+        description: "Category of the transaction"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('categorytree')
+              field: TXT_CATEGORY_LVL3
+              severity: warn
+      - name: is_transfer
+        description: "Flag indicating if the transaction is a transfer"
+        tests:
+          - not_null
+          - accepted_values:
+              values: [0, 1]
+      - name: scope_out
+        description: "Flag indicating if the transaction is a scope out"
+        tests:
+          - not_null
+          - accepted_values:
+              values: [0, 1]

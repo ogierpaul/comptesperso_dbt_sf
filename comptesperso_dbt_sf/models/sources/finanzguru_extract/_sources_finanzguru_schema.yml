@@ -1,0 +1,23 @@
+version: 2
+
+sources:
+  - name: staging_finanzguru
+#    database:
+    database: ZACHEE
+    schema: STAGING
+    tables:
+      - name: STG_FINANZGURU
+        columns:
+          - name: transaction_id
+            description: Primary key of the transaction table
+            tests:
+              - unique
+              - not_null
+          - name: processing_date
+            description: Date of python processing
+            tests:
+              - not_null
+          - name: filename
+            description: filename used for export
+            tests:
+              - not_null

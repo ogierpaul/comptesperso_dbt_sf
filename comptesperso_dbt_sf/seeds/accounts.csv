@@ -1,0 +1,10 @@
+account_iban,account_name,preferred_category
+DE****8605,Db_receveur,InternalMovements
+DE****3827,Ing_commun,InternalMovements
+DE****4559,Ing_abonnements,InternalMovements
+DE****7039,Baufi_1,Kredit
+DE****7038,Baufi_2,Kredit
+DE****0132,Spar_commun,Sparen
+DE****2806,Ing_old,Autres comptes
+FR****3161,Soge_Paul,Autres comptes
+FR****1054,Soge_Marine,Autres comptes
