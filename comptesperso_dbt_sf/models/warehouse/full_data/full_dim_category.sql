@@ -1,0 +1,5 @@
+SELECT
+    TXT_CATEGORY_LVL1,
+    TXT_CATEGORY_LVL2,
+    TXT_CATEGORY_LVL3
+FROM {{ ref('categorytree') }}

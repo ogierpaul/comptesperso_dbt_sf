@@ -1,0 +1,10 @@
+transaction_type_german,transaction_type_english
+Ueberweisung,Transfer
+Dauerauftrag,Standing Order
+Kreditkartenzahlung,Credit Card Payment
+SEPA-Lastschrift,SEPA Direct Debit
+Sonstige,Other
+Zinsen/Entgelt,Interest/Charge
+Barentnahme,Cash
+Kartenzahlung,Credit Card Payment
+Lastschrift,Direct Debit

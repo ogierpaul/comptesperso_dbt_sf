@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: scopeout_review
+    description: "extract of the data that is scoped out transfered, scoped out, beneficiary is personal account, Category is internal movements"
+    columns:
+      - name: transaction_id
+        description: "transaction id"
+        tests:
+          - unique
+          - not_null

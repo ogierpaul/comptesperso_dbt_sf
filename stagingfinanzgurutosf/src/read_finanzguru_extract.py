@@ -4,19 +4,14 @@ import re
 import hashlib
 import datetime
 
-global_expected_columns = ['DATE_ENREGISTREMENT', 'NAME_PERSONAL_ACCOUNT', 'MONTANT',
+_global_expected_columns = ['TRANSACTION_ID','DATE_ENREGISTREMENT', 'NAME_PERSONAL_ACCOUNT', 'MONTANT',
        'SOLDE_COMPTE', 'BENEFICIAIRE', 'BENEFICIAIRE_IBAN',
        'TRANSACTION_DESCRIPTION', 'BENEFICIAIRE_IBAN2', 'CATEGORIE_L1',
        'CATEGORIE_L2', 'CONTRAT', 'CONTRAT_RECURRENCE', 'CONTRAT_ID',
        'TRANSFER', 'EXCLUS_REVENUS', 'TRANSACTION_METHODE',
        'REVENUS_DEPENSES', 'PERSONAL_IBAN', 'FILENAME', 'PROCESSING_DATE']
 
-def _hello_world() -> str:
-    """
-    This dummy function is used to test the integration with pytest
-    :return: dummy text for use in pytest
-    """
-    return 'Hello World'
+_usual_dirs = ['/Users/paul_ogier/Downloads', '/Users/paul_ogier/Documents/comptes' , '/Users/paul_ogier/Box Sync/Privat Paul Ogier/PauliPhoneShareZone']
 
 
 def latest_excel_from_finanzguru() -> (pd.DataFrame, str):
@@ -24,10 +19,9 @@ def latest_excel_from_finanzguru() -> (pd.DataFrame, str):
     :param path:
     :return:
     """
-    usual_dirs = ['/Users/paul_ogier/Downloads', '/Users/paul_ogier/Documents/comptes']
     pattern = r"^\d{8}-Export-Alle_Buchungen.xlsx$"
     files = []
-    for d in usual_dirs:
+    for d in _usual_dirs:
         for filepath in glob.glob(d + "/*.*"):
             filename = filepath.split('/')[-1]
             if re.match(pattern, filename):
@@ -87,7 +81,6 @@ def add_uid(df: pd.DataFrame) -> pd.DataFrame:
     if uid_counts.max() > 1:
         duplicates = uid_counts.loc[uid_counts > 1].index
         raise KeyError(f'In column {uid_name}: duplicate values for values: {duplicates} ' )
-    df.set_index(uid_name, inplace=True)
     return df
 
 
@@ -96,22 +89,12 @@ def prepare_excel_for_upload(df: pd.DataFrame, filename:str) -> pd.DataFrame:
     df = rename_columns(df)
     df['FILENAME'] = filename
     df['PROCESSING_DATE'] = datetime.datetime.now().strftime('%Y-%m-%d')
-    df = df[global_expected_columns]
     df = add_uid(df)
+    df = df[_global_expected_columns]
     df.columns = [c.upper() for c in df.columns]
     return df
-
-def write_df_to_csv(df:pd.DataFrame, fp:str) -> None:
-    df.to_csv(fp, encoding='utf-8', index=True, sep='|')
 
 
 def latest_excel_as_df_prepared() -> pd.DataFrame:
     (df, filename) = latest_excel_from_finanzguru()
     return prepare_excel_for_upload(df, filename)
-
-if __name__ == '__main__':
-    df = latest_excel_from_finanzguru()
-    df = prepare_excel_for_upload(df)
-    fp = '/Users/paul_ogier/Desktop/export_finanzguru.csv'
-    write_df_to_csv(df, fp)
-    pass

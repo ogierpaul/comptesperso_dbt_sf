@@ -1,28 +1,21 @@
-import pandas as pd
-import yaml
 import os
+from tree2tabular import TreeBuilder
 
-def load_yaml(fn:str) ->dict:
-    with open(fn) as f:
-        d = yaml.safe_load(f)
-    return d
+def read_file(fn:str) -> TreeBuilder:
+    tree = TreeBuilder.from_yaml(fn)
+    return tree
 
-def load_dict_to_level_based_hierarchy(d:dict) -> pd.DataFrame:
-    df = pd.DataFrame.from_dict(d, orient='index')
-    df.index.name = 'L0'
-    df = pd.melt(df.reset_index(drop=False), id_vars=['L0'], var_name='L1', value_name='L2').dropna()
-    df = df.explode(column='L2')
-    return df
+def output_seed(tree:TreeBuilder, output_fn:str):
+    tree.to_csv(output_fn, overwrite=True)
 
-def create_csv_from_yml():
-    fn = 'categorytree.yml'
-    fn_csv = '.'.join(fn.split('.')[:-1])+'.csv'
+def create_category_hierarchy_main():
     projdir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    wdir = os.path.join(projdir, 'hierarchy')
-    seeddir = os.path.join(projdir, 'comptesperso_dbt_sf', 'seeds')
-    d = load_yaml(os.path.join(wdir, fn))
-    df = load_dict_to_level_based_hierarchy(d)
-    df.to_csv(os.path.join(seeddir, fn_csv), index=False)
+    input_fn = os.path.join(projdir, 'hierarchy', 'categorytree_with_ids.yml')
+    output_fn = os.path.join(projdir, 'comptesperso_dbt_sf', 'seeds', 'categorytree.csv')
+    tree = read_file(input_fn)
+    output_seed(tree, output_fn)
+    pass
+
 
 if __name__ == '__main__':
-    create_csv_from_yml()
+    create_category_hierarchy_main()

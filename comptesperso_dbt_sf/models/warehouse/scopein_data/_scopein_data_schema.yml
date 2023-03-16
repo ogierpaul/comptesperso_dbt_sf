@@ -1,0 +1,57 @@
+version: 2
+
+models:
+  - name: scopein_dim_account
+    description: Personal account master data
+    columns:
+      - name: personal_iban
+        description: masked personal iban
+        tests:
+          - unique
+          - not_null
+      - name: personal_account_name
+        description: personal account name from the seed file
+        tests:
+          - unique
+          - not_null
+  - name: scopein_dim_category
+    description: category tree
+    columns:
+      - name: TXT_CATEGORY_LVL3
+        description: category level 3 (lowest level), corresponds to Level2 in Finanzguru
+        tests:
+          - unique
+          - not_null
+      - name: TXT_CATEGORY_LVL2
+        description: category level 2
+        tests:
+          - not_null
+      - name: TXT_CATEGORY_LVL1
+        description: category level 1, highest level
+        tests:
+          - not_null
+          - accepted_values:
+              values: ["Income", "Expenses", "Savings"]
+
+  - name: scopein_fact_transactions
+    description: fact table of the model, filtered to only include scope-in transactions
+    columns:
+      - name: transaction_id
+        description: unique transaction id
+        tests:
+          - unique
+          - not_null
+      - name: personal_iban
+        description: personal account iban
+        tests:
+          - not_null
+          - relationships:
+              to: ref('full_dim_account')
+              field: personal_iban
+      - name: TXT_CATEGORY_LVL3
+        description: category level 3 (lowest level), corresponds to Level2 in Finanzguru
+        tests:
+          - not_null
+          - relationships:
+              to: ref('full_dim_category')
+              field: TXT_CATEGORY_LVL3

@@ -1,0 +1,41 @@
+version: 2
+
+sources:
+  - name: staging_corrections
+#    database:
+    database: ZACHEE
+    schema: STAGING
+    tables:
+      - name: self_cancelling_transactions
+        description: list of self cancelling transactions
+        columns:
+          - name: transaction_id
+            description: Primary key of the transaction table
+            tests:
+              - unique
+              - not_null
+          - name: pair_id
+            description: Corresponding pair
+            tests:
+              - not_null
+      - name: transaction_id_details
+        description: corrected list of transaction details
+        columns:
+          - name: transaction_id
+            description: Primary key of the transaction table
+            tests:
+              - unique
+              - not_null
+          - name: txt_category_lvl3
+            tests:
+              - not_null
+          - name: scope_out
+            tests:
+              - not_null
+              - accepted_values:
+                  values: ["true", "false"]
+          - name: is_transfer
+            tests:
+              - not_null
+              - accepted_values:
+                  values: ["true", "false"]
