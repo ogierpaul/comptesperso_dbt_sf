@@ -3,8 +3,7 @@ name: on_push_run_pytest
 # https://github.com/horosin/python-standard-ci
 # https://www.section.io/engineering-education/setting-up-cicd-for-python-packages-using-github-actions/
 on:
-  push:
-    branches: [main, dev_*, qa*, paul_*]
+  push
 
 jobs:
   on_push_run_pytest:
