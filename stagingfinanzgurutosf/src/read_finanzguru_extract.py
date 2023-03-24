@@ -75,7 +75,7 @@ def add_uid(df: pd.DataFrame) -> pd.DataFrame:
     def to_md5(s:str) -> str:
         return hashlib.md5(s.encode('utf-8')).hexdigest()[:8]
     uid_name = 'TRANSACTION_ID'
-    hashed_cols = ['DATE_ENREGISTREMENT', 'MONTANT', 'PERSONAL_IBAN', 'BENEFICIAIRE', 'BENEFICIAIRE_IBAN', 'TRANSACTION_DESCRIPTION', 'SOLDE_COMPTE']
+    hashed_cols = ['DATE_ENREGISTREMENT_RAW', 'MONTANT', 'PERSONAL_IBAN', 'BENEFICIAIRE', 'BENEFICIAIRE_IBAN', 'TRANSACTION_DESCRIPTION', 'SOLDE_COMPTE']
     df[uid_name] = df[hashed_cols].applymap(to_str).apply(lambda r:'|'.join(r), axis=1).apply(to_md5)
     uid_counts = df[uid_name].value_counts()
     if uid_counts.max() > 1:
@@ -88,6 +88,8 @@ def prepare_excel_for_upload(df: pd.DataFrame, filename:str) -> pd.DataFrame:
     df = remove_unused_cols(df)
     df = rename_columns(df)
     df['FILENAME'] = filename
+    df['DATE_ENREGISTREMENT_RAW'] = df['DATE_ENREGISTREMENT']
+    df['DATE_ENREGISTREMENT'] = pd.to_datetime(df['DATE_ENREGISTREMENT']).dt.strftime('%Y-%m-%d')
     df['PROCESSING_DATE'] = datetime.datetime.now().strftime('%Y-%m-%d')
     df = add_uid(df)
     df = df[_global_expected_columns]
