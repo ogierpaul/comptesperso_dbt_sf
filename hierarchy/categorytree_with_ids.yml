@@ -1,0 +1,262 @@
+Hierarchy:
+  name: category
+  id_generation: uuid
+  childs:
+  - name: Expenses
+    id: 25b06c
+    childs:
+    - name: Other
+      id: 3efe1f
+      childs:
+      - name: Autres comptes
+        id: 4ebdd6
+      - name: Erstattung
+        id: b58c81
+      - name: InternalMovements
+        id: d9ff60
+      - name: ScopeOut
+        id: 0a1b1g
+    - name: Alimentation
+      id: a5c9a0
+      childs:
+      - name: Drogerie
+        id: 9e9e37
+      - name: Getraenkehandel
+        id: e163bd
+      - name: Lebensmittel-Abo
+        id: ef4a3e
+      - name: Mittagessen & Kantine
+        id: 981dcb
+      - name: Sonstige Lebensmittelausgaben
+        id: 100af4
+      - name: Supermarkt
+        id: 15747f
+    - name: Assurance
+      id: 299c07
+      childs:
+      - name: Haftpflichtversicherung
+        id: 55c445
+      - name: Hausratversicherung
+        id: 9e00dc
+      - name: Sonstige Versicherung
+        id: e869a9
+      - name: Rechtsschutzversicherung
+        id: 2b2b1f
+    - name: AutresDepenses
+      id: 4902c1
+      childs:
+      - name: Geldautomat
+        id: 027cac
+      - name: OtherAccounts
+        id: 80dfdf
+      - name: Sonstige Ausgaben
+        id: ec4e6c
+    - name: Consommation
+      id: 096c34
+      childs:
+      - name: Bekleidung
+        id: '497226'
+      - name: Gluecksspiel
+        id: 61d99f
+      - name: Hotel & Urlaubswohnung
+        id: 3abcea
+      - name: Kaufhaus
+        id: 68c69a
+      - name: Online-Shopping
+        id: af7fed
+      - name: Sonstige Urlaubsausgaben
+        id: 3fe82e
+    - name: DonsCadeaux
+      id: 9280cb
+      childs:
+      - name: Geschenk
+        id: 21c799
+      - name: Sonstiger Verein
+        id: 8cffd3
+      - name: Spende
+        id: f99672
+    - name: Education
+      id: cd1e80
+      childs:
+      - name: Buecher & Medien
+        id: 8ef9ba
+      - name: Sonstige Bildungs- & Berufsausgaben
+        id: fd9b80
+      - name: Verlag & Zeitung
+        id: 5c0c11
+    - name: Electronique
+      id: '811353'
+      childs:
+      - name: Elektrohandel
+        id: 53d658
+    - name: Enfants
+      id: 7cb46a
+      childs:
+      - name: Kindergarten
+        id: aa6e70
+      - name: Schule & Foerderung
+        id: 0257c3
+      - name: Sonstige Kinderausgaben
+        id: 60eff3
+      - name: Spielsachen
+        id: 6c5b82
+    - name: FraisBancaires
+      id: 6d529d
+      childs:
+      - name: Auslandseinsatzentgelt
+        id: f8e4b9
+      - name: Kreditkartenabrechnung
+        id: fc6760
+      - name: Zinsen & Entgelte
+        id: c790db
+    - name: Impots
+      id: fd953c
+      childs:
+      - name: Rundfunkgebuehren
+        id: abaad5
+      - name: Steuern & Abgaben
+        id: 6ddfae
+    - name: Internet
+      id: ab2615
+      childs:
+      - name: Domain & Hosting
+        id: b2b334
+      - name: Mobilfunk
+        id: cede08
+      - name: Streaming & Pay-TV
+        id: ecfd53
+    - name: Maison
+      id: 70e3f8
+      childs:
+      - name: Baumarkt
+        id: 988ac9
+      - name: Blumen
+        id: dc884f
+      - name: Einrichtung
+        id: 631f84
+      - name: Grundbesitzabgaben
+        id: 6f2eb8
+      - name: Handwerksleistungen
+        id: 5ce04d
+      - name: Hausgeld
+        id: 4bf614
+      - name: Miete
+        id: 5ce64b
+      - name: Sonstige Haushaltsausgaben
+        id: d5021d
+      - name: Strom
+        id: '456814'
+      - name: Strom & Gas
+        id: 5aab15
+    - name: Medias
+      id: 4957b9
+      childs:
+      - name: Tickets
+        id: 8b2b5f
+      - name: Entertainment
+        id: b9154c
+      - name: Kino
+        id: 238b54
+      - name: Prime-Mitgliedschaft
+        id: 10a09c
+      - name: Sonstige Freizeitausgaben
+        id: 4cd1a4
+      - name: Sonstige Shoppingausgaben
+        id: 59277e
+    - name: Restaurants & Bars
+      id: 3e457f
+      childs:
+      - name: Lieferservice
+        id: 2eabe7
+      - name: Restaurant
+        id: c69c89
+      - name: Sonstiges Essen & Trinken
+        id: e68c18
+    - name: Santé
+      id: 44bac9
+      childs:
+      - name: Aerztliche Behandlung
+        id: 8379e1
+      - name: Apotheke
+        id: 789f05
+      - name: Augenoptik
+        id: '942527'
+      - name: RemboursementsSanté
+        id: 42a830
+      - name: Sonstige Gesundheitsausgaben
+        id: 01a55c
+      - name: Sonstiger Sport
+        id: abbaf2
+      - name: Sportverein
+        id: 8ec3a0
+      - name: Taxi
+        id: f934ef
+    - name: Transport
+      id: 0e8d99
+      childs:
+      - name: Autovermietung
+        id: 049df6
+      - name: Bahntickets
+        id: 5711f6
+      - name: Fahrrad
+        id: dea2e8
+      - name: Fluege
+        id: d9dba0
+      - name: Laden
+        id: b70c2b
+      - name: Oeffentlicher Nahverkehr
+        id: '483355'
+      - name: Parken
+        id: 4a8ec6
+      - name: Sharing-Angebote
+        id: c3b7c9
+      - name: Sonstige Mobilitaetsausgaben
+        id: 4be5b8
+      - name: Tanken
+        id: 94b4a7
+      - name: Werkstatt & Service
+        id: 9c4d8d
+  - name: Income
+    id: 8ccb45
+    childs:
+    - name: RevenusExceptionels
+      id: 2d510b
+      childs:
+      - name: Kapitalertraege
+        id: fb8260
+      - name: Kaution
+        id: 769e41
+      - name: Mieteinnahmen
+        id: 594e98
+      - name: Sonstige Einnahmen
+        id: 8c9f85
+      - name: Steuerrueckerstattung
+        id: ddaad5
+      - name: Verkaufserloes
+        id: faa646
+    - name: RevenusRecurrents
+      id: 7ff3bf
+      childs:
+      - name: Elterngeld
+        id: '239037'
+      - name: Familiengeld
+        id: 088d0c
+      - name: Kindergeld
+        id: cb1012
+      - name: Lohn/Gehalt
+        id: e8bc10
+  - name: Savings
+    id: b31196
+    childs:
+      - name: Kapitalanlage
+        id: 7f7748
+      - name: Kredit
+        id: 5db6ac
+      - name: Lebensversicherung
+        id: c65e97
+      - name: Risikolebensversicherung
+        id: '232854'
+      - name: Sparen
+        id: 6fcd9a
+      - name: Baufinanzierung
+        id: 7gcd9b

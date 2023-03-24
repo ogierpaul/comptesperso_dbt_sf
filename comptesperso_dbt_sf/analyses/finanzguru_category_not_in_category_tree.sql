@@ -1,0 +1,4 @@
+SELECT
+    *
+FROM {{ref('formatstage')}} a
+WHERE NOT EXISTS(SELECT TXT_CATEGORY_LVL3 FROM ref{{'categorytree'}} b ON a.FINANZGURU_CATEGORY_LVL2 = b.TXT_CATEGORY_LVL3)

@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "stagingfinanzgurutosf"
+version = "0.0.4"
+authors = [
+  { name="Paul Ogier", email="ogier.paul@gmail.com" },
+]
+description = "Staging module for finanzguru.de to snowflake"
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["stagingfinanzgurutosf", "."]

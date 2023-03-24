@@ -1,0 +1,97 @@
+TXT_CATEGORY_LVL1,TXT_CATEGORY_LVL2,TXT_CATEGORY_LVL3,DIM_CATEGORY_LVL1,DIM_CATEGORY_LVL2,DIM_CATEGORY_LVL3
+Expenses,Other,Autres comptes,25b06c,3efe1f,4ebdd6
+Expenses,Other,Erstattung,25b06c,3efe1f,b58c81
+Expenses,Other,InternalMovements,25b06c,3efe1f,d9ff60
+Expenses,Other,ScopeOut,25b06c,3efe1f,0a1b1g
+Expenses,Alimentation,Drogerie,25b06c,a5c9a0,9e9e37
+Expenses,Alimentation,Getraenkehandel,25b06c,a5c9a0,e163bd
+Expenses,Alimentation,Lebensmittel-Abo,25b06c,a5c9a0,ef4a3e
+Expenses,Alimentation,Mittagessen & Kantine,25b06c,a5c9a0,981dcb
+Expenses,Alimentation,Sonstige Lebensmittelausgaben,25b06c,a5c9a0,100af4
+Expenses,Alimentation,Supermarkt,25b06c,a5c9a0,15747f
+Expenses,Assurance,Haftpflichtversicherung,25b06c,299c07,55c445
+Expenses,Assurance,Hausratversicherung,25b06c,299c07,9e00dc
+Expenses,Assurance,Sonstige Versicherung,25b06c,299c07,e869a9
+Expenses,Assurance,Rechtsschutzversicherung,25b06c,299c07,2b2b1f
+Expenses,AutresDepenses,Geldautomat,25b06c,4902c1,027cac
+Expenses,AutresDepenses,OtherAccounts,25b06c,4902c1,80dfdf
+Expenses,AutresDepenses,Sonstige Ausgaben,25b06c,4902c1,ec4e6c
+Expenses,Consommation,Bekleidung,25b06c,096c34,497226
+Expenses,Consommation,Gluecksspiel,25b06c,096c34,61d99f
+Expenses,Consommation,Hotel & Urlaubswohnung,25b06c,096c34,3abcea
+Expenses,Consommation,Kaufhaus,25b06c,096c34,68c69a
+Expenses,Consommation,Online-Shopping,25b06c,096c34,af7fed
+Expenses,Consommation,Sonstige Urlaubsausgaben,25b06c,096c34,3fe82e
+Expenses,DonsCadeaux,Geschenk,25b06c,9280cb,21c799
+Expenses,DonsCadeaux,Sonstiger Verein,25b06c,9280cb,8cffd3
+Expenses,DonsCadeaux,Spende,25b06c,9280cb,f99672
+Expenses,Education,Buecher & Medien,25b06c,cd1e80,8ef9ba
+Expenses,Education,Sonstige Bildungs- & Berufsausgaben,25b06c,cd1e80,fd9b80
+Expenses,Education,Verlag & Zeitung,25b06c,cd1e80,5c0c11
+Expenses,Electronique,Elektrohandel,25b06c,811353,53d658
+Expenses,Enfants,Kindergarten,25b06c,7cb46a,aa6e70
+Expenses,Enfants,Schule & Foerderung,25b06c,7cb46a,0257c3
+Expenses,Enfants,Sonstige Kinderausgaben,25b06c,7cb46a,60eff3
+Expenses,Enfants,Spielsachen,25b06c,7cb46a,6c5b82
+Expenses,FraisBancaires,Auslandseinsatzentgelt,25b06c,6d529d,f8e4b9
+Expenses,FraisBancaires,Kreditkartenabrechnung,25b06c,6d529d,fc6760
+Expenses,FraisBancaires,Zinsen & Entgelte,25b06c,6d529d,c790db
+Expenses,Impots,Rundfunkgebuehren,25b06c,fd953c,abaad5
+Expenses,Impots,Steuern & Abgaben,25b06c,fd953c,6ddfae
+Expenses,Internet,Domain & Hosting,25b06c,ab2615,b2b334
+Expenses,Internet,Mobilfunk,25b06c,ab2615,cede08
+Expenses,Internet,Streaming & Pay-TV,25b06c,ab2615,ecfd53
+Expenses,Maison,Baumarkt,25b06c,70e3f8,988ac9
+Expenses,Maison,Blumen,25b06c,70e3f8,dc884f
+Expenses,Maison,Einrichtung,25b06c,70e3f8,631f84
+Expenses,Maison,Grundbesitzabgaben,25b06c,70e3f8,6f2eb8
+Expenses,Maison,Handwerksleistungen,25b06c,70e3f8,5ce04d
+Expenses,Maison,Hausgeld,25b06c,70e3f8,4bf614
+Expenses,Maison,Miete,25b06c,70e3f8,5ce64b
+Expenses,Maison,Sonstige Haushaltsausgaben,25b06c,70e3f8,d5021d
+Expenses,Maison,Strom,25b06c,70e3f8,456814
+Expenses,Maison,Strom & Gas,25b06c,70e3f8,5aab15
+Expenses,Medias,Tickets,25b06c,4957b9,8b2b5f
+Expenses,Medias,Entertainment,25b06c,4957b9,b9154c
+Expenses,Medias,Kino,25b06c,4957b9,238b54
+Expenses,Medias,Prime-Mitgliedschaft,25b06c,4957b9,10a09c
+Expenses,Medias,Sonstige Freizeitausgaben,25b06c,4957b9,4cd1a4
+Expenses,Medias,Sonstige Shoppingausgaben,25b06c,4957b9,59277e
+Expenses,Restaurants & Bars,Lieferservice,25b06c,3e457f,2eabe7
+Expenses,Restaurants & Bars,Restaurant,25b06c,3e457f,c69c89
+Expenses,Restaurants & Bars,Sonstiges Essen & Trinken,25b06c,3e457f,e68c18
+Expenses,Santé,Aerztliche Behandlung,25b06c,44bac9,8379e1
+Expenses,Santé,Apotheke,25b06c,44bac9,789f05
+Expenses,Santé,Augenoptik,25b06c,44bac9,942527
+Expenses,Santé,RemboursementsSanté,25b06c,44bac9,42a830
+Expenses,Santé,Sonstige Gesundheitsausgaben,25b06c,44bac9,01a55c
+Expenses,Santé,Sonstiger Sport,25b06c,44bac9,abbaf2
+Expenses,Santé,Sportverein,25b06c,44bac9,8ec3a0
+Expenses,Santé,Taxi,25b06c,44bac9,f934ef
+Expenses,Transport,Autovermietung,25b06c,0e8d99,049df6
+Expenses,Transport,Bahntickets,25b06c,0e8d99,5711f6
+Expenses,Transport,Fahrrad,25b06c,0e8d99,dea2e8
+Expenses,Transport,Fluege,25b06c,0e8d99,d9dba0
+Expenses,Transport,Laden,25b06c,0e8d99,b70c2b
+Expenses,Transport,Oeffentlicher Nahverkehr,25b06c,0e8d99,483355
+Expenses,Transport,Parken,25b06c,0e8d99,4a8ec6
+Expenses,Transport,Sharing-Angebote,25b06c,0e8d99,c3b7c9
+Expenses,Transport,Sonstige Mobilitaetsausgaben,25b06c,0e8d99,4be5b8
+Expenses,Transport,Tanken,25b06c,0e8d99,94b4a7
+Expenses,Transport,Werkstatt & Service,25b06c,0e8d99,9c4d8d
+Income,RevenusExceptionels,Kapitalertraege,8ccb45,2d510b,fb8260
+Income,RevenusExceptionels,Kaution,8ccb45,2d510b,769e41
+Income,RevenusExceptionels,Mieteinnahmen,8ccb45,2d510b,594e98
+Income,RevenusExceptionels,Sonstige Einnahmen,8ccb45,2d510b,8c9f85
+Income,RevenusExceptionels,Steuerrueckerstattung,8ccb45,2d510b,ddaad5
+Income,RevenusExceptionels,Verkaufserloes,8ccb45,2d510b,faa646
+Income,RevenusRecurrents,Elterngeld,8ccb45,7ff3bf,239037
+Income,RevenusRecurrents,Familiengeld,8ccb45,7ff3bf,088d0c
+Income,RevenusRecurrents,Kindergeld,8ccb45,7ff3bf,cb1012
+Income,RevenusRecurrents,Lohn/Gehalt,8ccb45,7ff3bf,e8bc10
+Savings,Kapitalanlage,Kapitalanlage,b31196,7f7748,7f7748
+Savings,Kredit,Kredit,b31196,5db6ac,5db6ac
+Savings,Lebensversicherung,Lebensversicherung,b31196,c65e97,c65e97
+Savings,Risikolebensversicherung,Risikolebensversicherung,b31196,232854,232854
+Savings,Sparen,Sparen,b31196,6fcd9a,6fcd9a
+Savings,Baufinanzierung,Baufinanzierung,b31196,7gcd9b,7gcd9b

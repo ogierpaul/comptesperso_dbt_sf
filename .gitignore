@@ -10,3 +10,4 @@ __pycache__/
 poetry.lock
 _build/
 /.ipynb_checkpoints/
+/corrections/fact_with_corrections_extract.csv

@@ -1,0 +1,201 @@
+version: 2
+
+models:
+  - name: formatstage
+    description: "Format stage table"
+    columns:
+      - name: transaction_id
+        description: "Primary key of the transaction table"
+        tests:
+          - unique
+          - not_null
+      - name: processing_date
+        description: "Date of python processing"
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: "to_date('2022-01-01', 'YYYY-MM-DD')"
+              max_value: "getdate()"
+      - name: transaction_date
+        description: "Date of transaction booked"
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: "to_date('2019-01-01', 'YYYY-MM-DD')"
+              max_value: "dateadd(days, 2, getdate())"
+      - name: name_personal_account
+        description: "Name of the personal account provided by finanzguru"
+      - name: filename
+        description: "filename used for export"
+        tests:
+          - not_null
+      - name: amount
+        description: amount of the transaction. Negative means expenses, positive means income
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: -1000000
+              max_value: 1000000
+      - name: account_balance
+        description: "Balance of the account after the transaction"
+      - name: Beneficiary
+        description: "Beneficiary of the transaction"
+      - name: transaction_description
+        description: "Description of the transaction"
+      - name: beneficiary_iban
+        description: "IBAN of the beneficiary"
+      - name: FINANZGURU_CATEGORY_LVL1
+        description: "Category of the transaction, as provided by Finanzguru"
+        tests:
+          - not_null
+      - name: FINANZGURU_CATEGORY_LVL2
+        description: "Category of the transaction, as provided by Finanzguru. Should match category tree"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('categorytree')
+              field: TXT_CATEGORY_LVL3
+              severity: warn
+      - name: is_contract
+        description: "Is the transaction a contract?"
+        tests:
+          - not_null
+          - accepted_values:
+              values: [0, 1]
+      - name: contract_recurrence
+        description: "Recurrence of the contract"
+        tests:
+          - accepted_values:
+              values: ["monatlich", "jaehrlich", "zweimonatlich", "halbjaehrlich", "vierteljaehrlich"]
+              severity: warn
+          - relationships:
+              to: ref('recurrence_german_to_english')
+              field: recurrence_german
+              severity: warn
+      - name: contract_id
+        description: "ID of the contract"
+      - name: is_transfer
+        description: "Is the transaction a transfer?"
+        tests:
+          - not_null
+          - accepted_values:
+              values: [0, 1]
+      - name: scope_out
+        description: "Is the transaction out of scope?"
+        tests:
+          - not_null
+          - accepted_values:
+              values: [0, 1]
+      - name: transaction_type
+        description: "Type of the transaction"
+        tests:
+          - accepted_values:
+              values: ["Ueberweisung", "Dauerauftrag", "Kreditkartenzahlung", "SEPA-Lastschrift", "Sonstige", "Zinsen/Entgelt","Barentnahme", "Kartenzahlung", "Lastschrift"]
+              severity: warn
+          - relationships:
+              to: ref('transaction_type_german_to_english')
+              field: transaction_type_german
+              severity: warn
+      - name: income_expense
+        description: "Is the transaction an income or an expense?"
+        tests:
+          - accepted_values:
+              values: ["Einnahmen", "Ausgaben"]
+              severity: warn
+          - relationships:
+              to: ref('income_expense_german_to_english')
+              field: income_expense_german
+              severity: warn
+
+      - name: personal_iban
+        description: "IBAN of the personal account"
+        tests:
+          - relationships:
+              to: ref('accounts')
+              field: account_iban
+              severity: warn
+      - name: TXT_CATEGORY_LVL3
+        description: "Category of the transaction, as provided by Finanzguru. Should match category tree"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('categorytree')
+              field: TXT_CATEGORY_LVL3
+              severity: warn
+      - name: beneficiary_iban_masked
+        description: "Masked IBAN of the beneficiary, in order to join with personal account iban"
+  - name: translate_to_english
+    description: "Translate german columns to english"
+    columns:
+      - name: transaction_id
+        description: "Primary key of the transaction table"
+        tests:
+          - unique
+          - not_null
+      - name: contract_recurrence
+        description: Recurrence of the contract, in english
+      - name: transaction_type
+        description: Type of the transaction, in english
+      - name: income_expense
+        description: Is the transaction an income or an expense, in english
+  - name: prepare_transaction_id_details
+    description: Format to boolean
+    columns:
+      - name: transaction_id
+        tests:
+          - unique
+          - not_null
+          - relationships:
+              to: ref('formatstage')
+              field: transaction_id
+              severity: warn
+      - name: is_transfer
+        tests:
+          - not_null
+      - name: scope_out
+        tests:
+          - not_null
+      - name: txt_category_lvl3
+        tests:
+          - not_null
+          - relationships:
+              to: ref('categorytree')
+              field: TXT_CATEGORY_LVL3
+              severity: warn
+  - name: prepare_self_cancelling_transactions
+    description: na
+    columns:
+      - name: transaction_id
+        tests:
+          - unique
+          - not_null
+          - relationships:
+              to: ref('formatstage')
+              field: transaction_id
+              severity: warn
+      - name: pair_id
+        tests:
+          - not_null
+  - name: test_self_cancelling_transactions
+    description: test if self cancelling transactions are correctly paired
+    columns:
+      - name: pair_id
+        tests:
+          - unique
+          - not_null
+      - name: pair_count
+        tests:
+          - not_null
+          - accepted_values:
+              values: [2]
+              severity: warn
+      - name: pair_sum
+        tests:
+          - not_null
+          - accepted_values:
+              values: [0]
+              severity: warn
+
+
+
+
