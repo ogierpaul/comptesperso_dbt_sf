@@ -19,3 +19,5 @@
 * Follow the steps in `stagingfinanzgurutosf/README.md`
 * Run dbt with `dbt build` or `dbt run`
 
+### Disclaimer
+* This is a personal project
