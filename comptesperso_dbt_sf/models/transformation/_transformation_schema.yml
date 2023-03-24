@@ -57,3 +57,11 @@ models:
           - not_null
           - accepted_values:
               values: [0, 1]
+  - name: transform_dim_date_spine
+    description: Date master data
+    columns:
+      - name: transaction_date
+        description: "Transaction date"
+        tests:
+          - not_null
+          - unique
